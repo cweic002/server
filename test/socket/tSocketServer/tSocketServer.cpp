@@ -11,7 +11,7 @@ bool App::Test::TSocketServer::open(){
 
 void App::Test::TSocketServer::close(){}
 
-App::Interface::ISocketClient * App::Test::TSocketServer::waitAndGetClient(){
+App::Interface::ISocketClient * App::Test::TSocketServer::getClientOrNullptr(){
     if (_initState & BadClient)
         return nullptr;
     return new SocketClient();

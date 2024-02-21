@@ -13,7 +13,7 @@ namespace App{
             TSocketServer(const char * __port,Status __initState = none);
             bool open() override;
             void close() override;
-            App::Interface::ISocketClient * waitAndGetClient() override;
+            App::Interface::ISocketClient * getClientOrNullptr() override;
         private:
             Status _initState;
         };

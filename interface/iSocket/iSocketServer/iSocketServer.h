@@ -6,7 +6,7 @@ namespace App{
         struct ISocketServer {
             virtual bool open() = 0;
             virtual void close() = 0;
-            virtual App::Interface::ISocketClient * waitAndGetClient() = 0;
+            virtual App::Interface::ISocketClient * getClientOrNullptr() = 0;
             virtual ~ISocketServer() = default;
         };
     }

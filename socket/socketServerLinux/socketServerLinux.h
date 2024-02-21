@@ -16,7 +16,7 @@ namespace App{
             ~SocketServerLinux();
             bool open() override;
             void close() override;
-            App::Interface::ISocketClient * waitAndGetClient() override;
+            App::Interface::ISocketClient * getClientOrNullptr() override;
         };
     }
 }

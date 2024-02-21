@@ -39,7 +39,7 @@ void App::Socket::SocketServerLinux::close(){
     ::close(_sockfd);
 }
 
-App::Interface::ISocketClient * App::Socket::SocketServerLinux::waitAndGetClient(){
+App::Interface::ISocketClient * App::Socket::SocketServerLinux::getClientOrNullptr(){
     _clilen = sizeof(_cli_addr);
     auto socketClient = accept(_sockfd,(struct sockaddr *) &_cli_addr,&_clilen);
     if(socketClient < 0)

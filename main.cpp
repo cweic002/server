@@ -44,7 +44,7 @@ void threadServer(char * port,const std::string & fileName){
     {
         std::list<App::Thread::Scoped_thread> threads;
         while(openServer){
-            std::unique_ptr<App::Interface::ISocketClient> client(server_ptr->waitAndGetClient());
+            std::unique_ptr<App::Interface::ISocketClient> client(server_ptr->getClientOrNullptr());
             if(client){
                 threads.emplace_back(std::thread(threadClient,std::move(client),std::ref(fileName)));
             }
